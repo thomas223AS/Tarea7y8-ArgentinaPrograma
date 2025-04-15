@@ -17,13 +17,13 @@ function validarNombre(nombre){
     if (nombre.length === 0)
         return 'Nombre debe tener al menos 1 caracter';
     else if (nombre.length >= 50)
-        return 'Nombre debe tener meenos de 50 caracteres';
+        return 'Nombre debe tener menos de 50 caracteres';
     else
     return '';
 }
 function validarCiudad(ciudad){
     if(ciudad=== ''){
-        return 'Porfavor ingrese una ciudad';
+        return 'No puede estar vacio';
     }
     return '';  
 }

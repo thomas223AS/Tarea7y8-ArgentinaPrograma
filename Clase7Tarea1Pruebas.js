@@ -1,19 +1,32 @@
 function probarValidarNombre(){
     console.assert(
-        validarNombre('') === 'No valido porque el campo esta vacio'
+        validarNombre('') === 'Nombre debe tener al menos 1 caracter', 'no valido porque esta vacio'
     );
     console.assert(
         validarNombre('1111111111111111111111111111111111111111111111111111111111111111111111111111111111111')===
-        'No valido porque el nombre supera los 50 caracteres'
+        'Nombre debe tener menos de 50 caracteres','no valido porque supero los 50'
+    );
+    console.assert(
+        validarNombre('Thomas')==='','Validar nombre fallo con un nombre valido'
     );
 }
 function probarValidarCiudad(){
     console.assert(
-        validarCiudad('')==='El usuario no elijio ninguna opcion'
+        validarCiudad('')==='No puede estar vacio','El usuario no elijio ninguna opcion'
+    );
+    console.assert(
+        validarCiudad('Catamarca')==='','Validar ciudad no funciono con una ciudad valida'
     );
 }
 function probarValidarDescripcion(){
     console.assert(
-        validarDescripcionRegalo('ho')==='El usuario puso menos de 3 caracteres'
+        validarDescripcionRegalo('ho')==='Debe tener mas caracteres','El usuario puso menos de 3 caracteres'
+    );
+    console.assert(
+        validarDescripcionRegalo('Quiero una play')==='','Validar descripcion no funciono, con una descripcion valida'
     );
 }
+
+probarValidarCiudad();
+probarValidarNombre();
+probarValidarDescripcion();
